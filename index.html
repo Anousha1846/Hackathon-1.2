@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hackathon 1.2</title>
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>#more {display: none;}</style>
+</head>
+
+<body>
+<!-- ========================================== header start ==================================================== -->
+<header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo"><b style="font-size: xx-large; color: chocolate; font-family: cursive;">SHOPPING</b><b style="color: gray; font-size: 2em; font-style: italic;">2.0</b> </a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#" class="nav__link">Home</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="about.html" class="nav__link" >About Us</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="products.html" class="nav__link">products</a>
+          </li>
+<!-- 
+          <li class="nav__item">
+            <a href="#" class="nav__link">Featured</a>
+          </li> -->
+
+          <li class="nav__item">
+            <a href="contact.html" class="nav__link">Contact Me</a>
+          </li>
+        </ul>
+
+        <!-- Close button -->
+        <div class="nav__close" id="nav-close">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+
+      <div class="nav__actions">
+       
+
+     <!-- Login button -->
+        <i class="fa fa-user " id="login-btn" style="font-size: 2.4em; margin-left: 40px;"></i>
+
+        <!-- Toggle button -->
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="fa fa-bars me-5"></i>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!--==================== SEARCH ====================-->
+  <div class="search" id="search">
+    <form action="" class="search__form">
+      <i class="ri-search-line search__icon" ></i>
+      
+      <input type="search" placeholder="What are you looking for?" class="search__input">
+    </form>
+
+    <i class="fa fa-times" id="search-close"></i>
+  </div>
+
+  <!--==================== LOGIN ====================-->
+  <div class="login" id="login">
+<div  class="login__form">
+      <h2 class="login__title">Log In</h2>
+
+      <div class="login__group">
+        <div>
+          <label for="email" class="login__label">Email</label>
+          <input type="email" placeholder="Write your email" id="emailLOGIN" class="login__input">
+        </div>
+
+        <div>
+          <label for="password" class="login__label">Password</label>
+          <input type="password" placeholder="Enter your password" id="passwordLOGIN" class="login__input">
+        </div>
+      </div>
+
+      <div>
+        <p class="login__signup">
+          You do not have an account? <a href="#">Sign up</a>
+        </p>
+
+        <a href="#" class="login__forgot">
+          You forgot your password
+        </a>
+
+        <button class="login__button" onclick="successfulLOGIN()">Log In</button>
+      </div>
+    
+    <i class="fa fa-times" aria-hidden="true" id="login-close"></i>
+  </div>
+
+</div>
+
+
+
+<!-- ========================================== header end ==================================================== -->
+<!-- ======================================== slider start ===================================================== -->
+
+<div class="containerSLIDER">
+    <div class="arrow l" onclick="prev()">
+      <img src="images/forward arrow.jpg" alt="l">
+    </div>
+    <div class="slide slide-1">
+      
+    </div>
+    <div class="slide slide-2">
+      
+    </div>
+    <div class="slide slide-3">
+      
+    </div>
+    <div class="arrow r" onclick="next()">
+      <img src="images/backward arrow.png" alt="r">
+    </div>
+  </div>
+<br><br><br>
+<!-- ============================================ slider end =================================================== -->
+  
+<h1 style="color: chocolate; font-size: 3em; text-align: center;">NEW ARRIVALS</h1>
+
+<div id="myBtnContainer" style="text-align: center;" class="m-5">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('electronics')"> electronics</button>
+  <button class="btn" onclick="filterSelection('clothes')"> clothes</button>
+  <button class="btn" onclick="filterSelection('Fruits')"> Fruits and Vegetables</button>
+  <button class="btn" onclick="filterSelection('Shoes')"> Shoes </button>
+</div>
+
+<div class="container SORT">
+  <div class="filterDiv electronics"> 
+    <img src="images/electronics1.jpg"  width="100%" height="100%"   alt="">
+  </div>
+  <!-- <div class="filterDiv  Fruits">
+    <img src="images/fruit1.jpg"   width="100%" height="100%"  alt="">
+
+  </div> -->
+  <div class="filterDiv electronics">
+    <img src="images/electronics2.jpg"  width="100%" height="100%"   alt="">
+
+  </div>
+  <div class="filterDiv Shoes">
+    <img src="images/shoe2.jpg"  width="100%"  height="100%"  alt="">
+
+  </div>
+  <div class="filterDiv electronics">
+    <img src="images/electronics3.jpg"  width="100%" height="100%"   alt="">
+
+  </div>   
+  <div class="filterDiv Shoes">
+    <img src="images/shoe1.jpg" width="100%"  height="100%" alt="">
+  </div>
+  <div class="filterDiv clothes">
+    <img src="images/cloth1.jpg"   width="100%" height="100%"  alt="">
+
+  </div>
+  <div class="filterDiv fruits">
+    <img src="images/fruit2.jpg"   width="100%"  height="100%" alt="">
+
+  </div>
+  <div class="filterDiv fruits">
+    <img src="images/fruit3.jpg"  width="100%" height="100%"   alt="">
+  </div>
+  <div class="filterDiv  Fruits">
+    <img src="images/fruit1.jpg"   width="100%" height="100%"  alt="">
+
+  </div>
+  <div class="filterDiv clothes">
+    <img src="images/cloth5.jpg"   width="100%" height="100%"  alt="">
+
+  </div>
+  <div class="filterDiv clothes">
+    <img src="images/shirt.jpg"   width="100%" height="100%"  alt="">
+
+  </div>
+  <div class="filterDiv clothes">
+    <img src="images/sort.jpg"   width="100%" height="100%"  alt="">
+
+  </div>
+
+</div>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script> 
+<!-- sort end -->
+
+<!--======================================= our colaborators start ====================================  -->
+<h1 style="color: chocolate; font-size: 3em; text-align: center;" class="m-5">CUSTOMER REVIEWS</h1>
+
+<div class="testimonial-slider">
+  <div id="carouselExampleControls" class="carousel carousel-dark" data-bs-ride="carousel">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="testimonial-title">
+                      <i class="bi bi-quote display-2"></i>
+                      <h1 class="fw-bolder my-5 display-6 ">What our customers say</h1>
+                      <!-- <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, ex autem id modi eum a.</h3> -->
+                    
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+<button onclick="myFunction()" id="READBtn" style="font-size: larger; font-weight: bold; background-color: red;  color: white; border: 4px solid red;">Read more</button>
+
+<script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("READBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+
+                    </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                  </button>
+              </div>
+              <div class="col-md-8">
+                  <div class="carousel-inner">
+                      <div class="carousel-item active">
+                          <div class="card">
+                              <div class="img-wrapper"><img src="images/rewiew3.webp" class="d-block w-100" alt="..."> </div>
+                              <div class="card-body">
+                                  <h5 class="card-title">lorem Ipsum</h5>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <p class="card-text">"Some dummy text you don't need to read. Since you have decided to read, do like, share, comment and subscribe to Coding Yaar."</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                          <div class="card">
+                              <div class="img-wrapper"><img src="images/rewiew4.jpg" class="d-block w-100" alt="..."> </div>
+                              <div class="card-body">
+                                  <h5 class="card-title">lorem Ipsum</h5>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <p class="card-text">"Some dummy text you don't need to read. Since you have decided to read, do like, share, comment and subscribe to Coding Yaar."</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                          <div class="card">
+                              <div class="img-wrapper"><img src="images/rewiew5.jpg" class="d-block w-100" alt="..."> </div>
+                              <div class="card-body">
+                                  <h5 class="card-title">lorem Ipsum</h5>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <p class="card-text">"Some dummy text you don't need to read. Since you have decided to read, do like, share, comment and subscribe to Coding Yaar."</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                          <div class="card">
+                              <div class="img-wrapper"><img src="images/review6.jpg" class="d-block w-100" alt="..."> </div>
+                              <div class="card-body">
+                                  <h5 class="card-title">lorem Ipsum</h5>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <p class="card-text">"Some dummy text you don't need to read. Since you have decided to read, do like, share, comment and subscribe to Coding Yaar."</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                          <div class="card">
+                              <div class="img-wrapper"><img src="images/rev.jpg" class="d-block w-100" alt="..."> </div>
+                              <div class="card-body">
+                                  <h5 class="card-title">Card title 5</h5>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <p class="card-text">"Some dummy text you don't need to read. Since you have decided to read, do like, share, comment and subscribe to Coding Yaar."</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                          <div class="card">
+                              <div class="img-wrapper"><img src="images/review2.avif" class="d-block w-100" alt="..."> </div>
+                              <div class="card-body">
+                                  <h5 class="card-title">Card title 6</h5>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <i class="bi bi-star-fill text-warning pe-1"></i>
+                                  <p class="card-text">"Some dummy text you don't need to read. Since you have decided to read, do like, share, comment and subscribe to Coding Yaar."</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!--======================================= rewies end ====================================  -->
+
+<!--======================================= our colaborators start ====================================  -->
+
+<!--======================================= our colaborators end ====================================  -->
+
+
+
+
+
+    <!-- footer start -->
+    <footer style="color: #000;">
+      <div class="main-content">
+          <div class="left box">
+              <h2>About us</h2>
+              <div class="content">
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor quam architecto cum animi.
+                      Facilis, veniam! Nulla illo pariatur illum corrupti!</p>
+                  <div class="social">
+             
+                  </div>
+              </div>
+          </div>
+          <div class="center box">
+              <h2>Address</h2>
+              <div class="content">
+                  <div class="place">
+                      <span class="fas fa-map-marker-alt"></span>
+                      <span class="text"  style="color: #000;">Birendranagar, Surkhet</span>
+                  </div>
+                  <div class="phone">
+                      <span class="fas fa-phone-alt"></span>
+                      <span class="text"  style="color: #000;">+089-765432100</span>
+                  </div>
+                  <div class="email">
+                      <span class="fas fa-envelope"></span>
+                      <span class="text"  style="color: #000;">abc@example.com</span>
+                  </div>
+              </div>
+          </div>
+          <div class="right box">
+
+              <h2 style="border-bottom: 2px solid chocolate;">Lorem ipsum dolor sit amet.</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas facere eaque nihil iusto
+                  perspiciatis, recusandae illum aspernatur nobis nesciunt provident tempore aut officia optio, ipsum
+                  est, eius numquam tempora et amet pariatur. Vero nulla provident possimus ipsum laborum! Ad, ullam
+                  reiciendis! Vel eaque asperiores esse possimus, dolore a beatae mollitia.
+              </p>
+          </div>
+      </div>
+      <div class="bottom" style="background-color: #000; color: white;">
+          <center>
+              <span class="credit">Created By <b><i>ANOUSHA ASADULLAH</i></b> </span>
+              <span class="far fa-copyright"></span><span> 2020 All rights reserved.</span>
+          </center>
+      </div>
+  </footer>
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top"> <img src="images/arrowUP.jpg" width="40px" height="25px" alt=""></button>
+
+    
+
+
+  <script>
+      let mybutton = document.getElementById("myBtn");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  mybutton.style.display = "block";
+} else {
+  mybutton.style.display = "none";
+}
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+document.body.scrollTop = 0; // For Safari
+document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+  </script>
+  <!-- footer end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- custom js -->
+    <script src="script.js"></script>
+    <!-- font awesome css -->
+</body>
+
+</html>
